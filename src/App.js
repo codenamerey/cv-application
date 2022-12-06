@@ -1,4 +1,6 @@
 import Block from "./components/Block";
+import 'normalize.css';
+import './App.css';
 
 function App() {
   return (

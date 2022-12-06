@@ -1,0 +1,16 @@
+.block {
+    background: gainsboro;
+    box-shadow: 2px 2px 2px gray;
+    padding: 1rem 10rem;
+    text-align: center;
+}
+
+.block > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.block button {
+    margin: 1rem;
+}

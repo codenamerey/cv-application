@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Editable from './Editable';
 import uniqid from 'uniqid';
+import './Block.css';
 
 class Block extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class Block extends Component {
         let { title } = this.props;
         let { info } = this.state;
         return (
-            <div>
+            <div className='block'>
                 <h1>{title}</h1>
                 <ul>
                     {info.map(datum => {
