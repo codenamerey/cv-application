@@ -5,10 +5,22 @@ import uniqid from 'uniqid';
 class Block extends Component {
     constructor(props) {
         super(props);
+        this.addMore = this.addMore.bind(this);
+        this.state = {
+            info: this.props.info
+        }
+    }
+
+    addMore() {
+        this.setState({
+            info: this.state.info.concat(this.props.info)
+        });
+        console.log(this.props.info);
     }
 
     render() {
-        let { title, info } = this.props;
+        let { title } = this.props;
+        let { info } = this.state;
         return (
             <div>
                 <h1>{title}</h1>
@@ -19,6 +31,8 @@ class Block extends Component {
                         })}</li>
                     })}
                 </ul>
+                
+                <button onClick={this.addMore}>Add More {title} +</button>
 
 
             </div>
