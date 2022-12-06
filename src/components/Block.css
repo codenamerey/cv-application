@@ -14,3 +14,8 @@
 .block button {
     margin: 1rem;
 }
+
+.block h1 {
+    margin: 0;
+    padding: 0;
+}

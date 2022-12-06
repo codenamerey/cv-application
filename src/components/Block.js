@@ -20,10 +20,11 @@ class Block extends Component {
     }
 
     render() {
-        let { title } = this.props;
+        let { title, forPublish } = this.props;
         let { info } = this.state;
-        return (
-            <div className='block'>
+        console.log(forPublish);
+        return ( (!forPublish) ?
+            (<div className='block'>
                 <h1>{title}</h1>
                 <ul>
                     {info.map(datum => {
@@ -36,7 +37,22 @@ class Block extends Component {
                 <button onClick={this.addMore}>Add More {title} +</button>
 
 
-            </div>
+            </div>)
+            :
+            (
+                <div className='block'>
+                <h1>{title}</h1>
+                <ul>
+                    {info.map(datum => {
+                        return <li>{datum[0]}: {datum[1].map(detail => {
+                            return <Editable text={detail} id={uniqid()}/> 
+                        })}</li>
+                    })}
+                </ul>
+
+
+            </div>    
+            )
 
         );
     }
